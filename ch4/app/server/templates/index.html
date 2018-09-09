@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <style type="text/css">
+        body{
+            margin: 40px;
+        }
+        .wrapper {
+          display: grid;
+          grid-template-columns: 300px 300px 300px;
+          grid-gap: 10px;
+          color: #444;
+        }
+        .box {
+          padding: 20px;
+        }
+
+        .img_result{
+            float:left;
+            margin-botom:10px;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <h1>MegaPixels: Chapter 4</h1>
+            <form method="POST" action="/" enctype="multipart/form-data">
+                <input type="file" name="img_query"><br>
+                <input type="submit">
+            </form>
+
+            <!-- show original image -->
+            <h2>Query</h2>
+            {% if fp_upload %}
+            <p>
+                <img src="{{ fp_upload }}" width="300px">
+                <ul>
+                    <li>File: {{ fp_upload }}</li>
+                </ul>
+            </p>
+            {% endif %}
+            
+            <!-- show morph -->
+            <h2>Morph</h2>
+            <div class="wrapper">
+                {% for item in glow_items %}
+                <div class="box">
+                    <p><img src="{{ item.filepath }}" width="300px" /></p>
+                    <p>{{ item.point }}</p> 
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- show matches -->
+            <h2>Matches</h2>
+            <div class="wrapper">
+                {% for item in match_items %}
+                <div class="box">
+                    <p><img src="{{ item.filepath }}" width="300px" /></p>
+                    <p><strong>{{ item.score }}%</strong> {{ item.person }}</p> 
+                </div>
+                {% endfor %}
+            </div>
+
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "match": "dataset/person1/image1.jpg",
+  "match_all": [
+    "dataset/person1/image12.jpg",
+    "dataset/person1/image41.jpg",
+    "dataset/person1/image3.jpg"
+  ],
+  "morph": "processed/5eaa2372-a217-4063-9f3a-d80b1f347d84_01.jpg",
+  "morph_all": [
+    "processed/5eaa2372-a217-4063-9f3a-d80b1f347d84_00.jpg",
+    "processed/5eaa2372-a217-4063-9f3a-d80b1f347d84_01.jpg",
+    "processed/5eaa2372-a217-4063-9f3a-d80b1f347d84_02.jpg"
+  ],
+  "success": true,
+  "upload": "uploads/5ea32372-a217-4063-9f3a-d80b1f347d84.jpg"
+}
