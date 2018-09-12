@@ -371,7 +371,7 @@ def cmd_glow_simple(ctx, fp_in_a, fp_in_b, dir_out,
 @click.option('-d', '--display', is_flag=True,
   help='Display result to screen')
 @click.pass_context
-def cmd_faceswap_simple(ctx, fp_in_a, fp_in_b, dir_out):
+def cmd_faceswap_simple(ctx, fp_in_a, fp_in_b, dir_out, display):
   """Clone person A's face to person B"""
 
   log = ctx.obj['logger']
@@ -380,14 +380,14 @@ def cmd_faceswap_simple(ctx, fp_in_a, fp_in_b, dir_out):
   faceswap = Faceswap()
  
   log.info('{} --> {}'.format(fp_in_a, fp_in_b))
-  im_synth = faceswap.generate(fp_in_a, fp_in_b, dir_out)
+  im_synth = faceswap.generate(fp_in_a, fp_in_b)
   
   # save or display output
   if dir_out:
     # get name
     fp_im_c = join(dir_out, '{}_x_{}.jpg'.format(Path(a).stem, Path(b).stem))
     cv.imwrite(fp_im_c, im_synth)
-  if ctx.obj['display']:
+  if display:
     # display to screen
     im_synth_rgb = im_utils.bgr2rgb(im_synth)
     im_pil = im_utils.ensure_pil(im_synth_rgb)
