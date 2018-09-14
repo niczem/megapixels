@@ -12,8 +12,6 @@ export LC_ALL=en_US.UTF-8
 curl https://storage.googleapis.com/glow-demo/blocksparse-1.0.0-py2.py3-none-any.whl > $dir_installs/blocksparse-1.0.0-py2.py3-none-any.whl
 pip install $dir_installs/blocksparse-1.0.0-py2.py3-none-any.whl
 
-exit 0
-
 # Pip packages for running server and face-aligned (dlib takes a while to install)
 #pip install flask flask_cors tqdm opencv-python imutils dlib imageio
 
