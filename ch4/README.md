@@ -19,29 +19,10 @@ Set a project folder
 Download pretrianed OpenAI Glow files:
 
 ```
-curl https://storage.googleapis.com/glow-demo/celeba-hq/x.npy > $glow/x.npy
-curl https://storage.googleapis.com/glow-demo/celeba-hq/attr.npy > $glow/attr.npy
-curl https://storage.googleapis.com/glow-demo/celeba-hq/z.npy > $glow/z.npy
+chmod +x setup.sh
+./setup.sh
 ```
 
-Get model weights
-
-`curl https://storage.googleapis.com/glow-demo/large3/graph_optimized.pb > $glow/graph_optimized.pb`
-
-Get manipulation vectors
-
-`curl https://storage.googleapis.com/glow-demo/z_manipulate.npy > $glow/z_manipulate.npy`
-
-Get facial landmarks for aligning input faces
-
-`curl https://storage.googleapis.com/glow-demo/shape_predictor_68_face_landmarks.dat > $dlib/shape_predictor_68_face_landmarks.dat`
-
-Pip package for running optimized model with fused kernels
-
-```
-curl https://storage.googleapis.com/glow-demo/blocksparse-1.0.0-py2.py3-none-any.whl > blocksparse-1.0.0-py2.py3-none-any.whl
-pip install blocksparse-1.0.0-py2.py3-none-any.whl
-```
 
 Edit folder/file paths in your `ch4/settings/app_cfg.py` file
 
@@ -49,7 +30,7 @@ Edit folder/file paths in your `ch4/settings/app_cfg.py` file
 
 - Clone project and submodules `git clone --recursive https://github.com/adamhrv/megapixels`
 - install [virutalenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/install.html)
-- `mkvirtualenv megapixels -p python3`
+- `mkvirtualenv megapixels -p python3.5`
 - `workon megapixels`
 - `pip install -r requirements.txt`
 - for cpu change `tensorflow-gpu` to `tensorflow`
@@ -58,6 +39,7 @@ Edit folder/file paths in your `ch4/settings/app_cfg.py` file
 
 - `workon megapixels`
 - `python cli.py`
+- `python cli.py sanity` top test imports
 
 ## Run app commands
 
