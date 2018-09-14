@@ -1,7 +1,7 @@
 from os.path import join
 
-DATA_STORE = '/data_store'
-DIR_APP = join(DATA_STORE, 'apps/megapixels/')
+DATA_STORE = 'data'
+DIR_APP = join(DATA_STORE, '')
 
 # face recognition
 FACEREC_NUM_ERS = 5
